@@ -1,0 +1,26 @@
+package task;
+
+import java.util.Scanner;
+
+public class String_Array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[][] name = { { "luke", "shaw" }, { "wayne", "rooney" }, { "rooney", "ronaldo" }, { "shaw", "ronaldo" } };
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the name:");
+		String person = sc.nextLine();
+		int count = 0;
+		for (String[] fam : name) {
+			if (fam[1].equals(person)) {
+				String child = fam[0];
+				for (String[] subfam : name) {
+					if (subfam[1].equals(child)) {
+						count++;
+					}
+				}
+			}
+		}
+		System.out.println("The number of grandchildren = " + count);
+	}
+}
